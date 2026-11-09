@@ -2,4 +2,4 @@ function somar(a, b) {
     return a + b;
 }
 
-somar(20, 20);
+console.log(somar(20, 20));

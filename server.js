@@ -5,7 +5,7 @@ const fs = require("node:fs");
 const porta = process.env.PORT || 3000;
 
 const servidor = http.createServer((req, res) => {
-    if (req.url === "/main.js") {
+    if (req.url === "/") {
         fs.readFile("main.js", (erro, conteudo) => {
             if (erro) {
                 res.writeHead(500);

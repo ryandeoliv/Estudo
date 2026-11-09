@@ -1,8 +1,5 @@
-function somar() {
-    function executar(a, b) {
-        return a + b;
-    }
-    executar(20, 20);
+function somar(a, b) {
+    return a + b;
 }
 
 module.exports = somar;

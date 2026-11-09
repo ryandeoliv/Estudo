@@ -10,6 +10,7 @@ const servidor = http.createServer((req, res) => {
             if (erro) {
                 res.writeHead(500);
                 res.end("Página indisponível");
+                return;
             }
             res.writeHead(200, { "Content-Type": "text/plain; charset=utf-8" });
             res.end(saida);

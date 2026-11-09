@@ -5,6 +5,4 @@ function somar() {
     executar(20, 20);
 }
 
-module.exports = {
-    somar
-}
+module.exports = somar;

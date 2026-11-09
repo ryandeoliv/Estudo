@@ -1,3 +1,4 @@
-number = 1;
-
-console.log(number);
+const player = {
+    atk: 10,
+    def: 5
+};

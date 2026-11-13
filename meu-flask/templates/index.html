@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>flask</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        #main {
+            width: 100vw;
+            height: 100dvh;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+
+            background-color: rgba(60, 60, 85, 1);
+            color: rgba(245, 245, 255, 1);
+        }
+    </style>
+</head>
+<body>
+    <main id="main">
+        <h1>Olá, Mundo!</h1>
+        <form>
+            <label for="nome-input">Nome:</label>
+            <input id="nome-input" type="text" placeholder="...">
+        </form>
+    </main>
+
+    <script>
+        const nomeInput = document.getElementById('nome-input');
+
+        nomeInput.addEventListener('keydown', async (e) => {
+            if (e.key === 'Enter') {
+                e.preventDefault();
+                if (nomeInput.value.trim().toLowerCase() !== "") {
+                    await fetch("/api/nomes", {
+                        method: "POST",
+                        headers: { "Content-Type": "application/json" },
+                        body: JSON.stringify({ nome: nomeInput.value })
+                    });
+                    
+                    nomeInput.value = ""
+                }
+            }
+        });
+    </script>
+</body>
+</html>
